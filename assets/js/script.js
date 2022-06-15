@@ -33,6 +33,7 @@ var searchHandler = function(){
 			
             break;
         case attractions:
+			
             break;
     }
 };

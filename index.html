@@ -16,25 +16,82 @@
     <!--colors blue: CCCCFF, purple: AA00FF,  -->
     <!--Header with -->
     <header>
-        <!--HomepageLink-->
-        <!--Popular Cities-->
-            <!--NYC-->
-            <!--Paris-->
-            <!--Tokyo-->
-        <!--Past Trips-->
-        <!--Contact-->
-        <!--About?-->
+        
+        <nav class="uk-navbar-container" uk-navbar>
+            <div class="uk-navbar-left">
+                <ul class="uk-navbar-nav">
+                    <!--HomepageLink-->
+                    <li class="uk-active"><a href="#">Homepage</a></li>
+                    <li class="uk-parent"> 
+                        <!--Popular Cities-->
+                        <a href="#">Popular Cities</a>
+                        <div class="uk-navbar-dropdown">
+                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                <!--NYC-->
+                                <li><a href="#"></a></li>
+                                <!--Paris-->
+                                <li><a href="#"></a></li>
+                                <!--Tokyo-->
+                                <li><a href="#"></a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <!--Past Trips-->
+                    <li class=""><a href="#">Recent Searches</a></li>
+                    <!--About?-->
+                    <li class=""><a href="#">About Us</a></li>
+                    <!--Contact-->
+                    <li class=""><a href="#">Contact Us</a></li>
+
+                </ul>
+            </div>
+        </nav>
+
+        
+       
+           
+            
+           
+        
+        
+      
 
     </header> 
 
     <!--Hero Section-->
         <!--background image hero-->
+        <div uk-slideshow="animation: push; autoplay: true">
+            <ul class="uk-slideshow-items">
+                <li>
+                    <img src="" alt="" uk-cover>
+                </li>
+                <li>
+                    <img src="" alt="" uk-cover>
+                </li>
+                <li>
+                    <img src="" alt="" uk-cover>
+                </li>
+                <li>
+                    <img src="" alt="" uk-cover>
+                </li>
+                <li>
+                    <img src="" alt="" uk-cover>
+                </li>
+                <li>
+                    <img src="" alt="" uk-cover>
+                </li>
+
+            </ul>
+        </div>
     <!--Form Inputs-->
+    <form>
+
+    
         <!--Where? id: location -->
         <!--When (Start End dates)? id: trip-length-->
             <!--use callender for date inputs-->
         <!--How Many? id: party-size -->
-        
+    </form>   
 
     <!--Popular City Cards-->
             <!--NYC-->
