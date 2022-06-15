@@ -27,8 +27,10 @@ var searchHandler = function(){
 
     switch(dropDownOptions){
         case Hotel:
+
             break;
         case carRental:
+			
             break;
         case attractions:
             break;
