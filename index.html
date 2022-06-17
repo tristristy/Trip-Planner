@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tour Tinder</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./assets/css/uikit.css" />
     <link rel="stylesheet" href="./assets/css/style.css"/>
 
@@ -83,29 +84,42 @@
 
             </ul>
 
-        <!--Form Inputs-->
-        <form>
+      </div>  <!--Form Inputs-->
+        <div class="uk-position-center uk-padding" style="border: solid 2px black; background-color: white;">
+        <form class="uk-grid-small" uk-grid>
             <!--Where? id: location -->
-            <label for ="destination">Choose a City</label>
-            <input type ="text" placeholder ="City" name = "Destination: " id = "destination" class =form-input>
+            <label for="destination">Choose a City</label>
+            <div class="uk-width-1-1">
+            <input type="text" placeholder="City" name="Destination:" id="destination" class="uk-input">
+            </div>
             <!--When (Start End dates)? id: trip-length-->
+            <div class="uk-width-1-2@s">
+            <input type="text" placeholder="Start Date" id="startDate" class="uk-input">
+            </div>
+            <div class="uk-width-1-2@s">
+            <input type="text" placeholder="End Date" id="endDate" class="uk-input">
+            </div>
+            
+
                 <!--use callender for date inputs-->
             <!--How Many? id: party-size -->
-        </form>   
-    </div>
+        </form>
+    </div>   
+    
     <!--Popular City Cards-->
             <!--NYC-->
             <!--Paris-->
             <!--Tokyo-->
 
     <!--Footer-->
-    <div class="footer">
+    <div class="footer uk-position-bottom">
         <h3>Brought to you by Tour Tinder ❤️️</h3>
         <p>
             &copy; 2022 Tour Tinder Inc.
         </p>
     </div>
         <!--Filler stuff from nav-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./assets/js/uikit.js"></script>
     <script src="./assets/js/uikit-icons.js"></script>
