@@ -14,7 +14,7 @@
 <body>
 
 
-    <!--colors blue: CCCCFF, purple: AA00FF,  -->
+    
     <!--Header with -->
     <header>
         
@@ -47,36 +47,27 @@
                 </ul>
             </div>
         </nav>
-
-        
-       
-           
-            
-           
-        
-        
-      
-
     </header> 
 
     <!--Hero Section-->
+    <div id= "hero" class ="uk-height-max-large">
     <!--background image hero-->
-    <div uk-slideshow="animation: push; autoplay: true">
+    <div uk-slideshow="animation: push; autoplay: true; min-height: 300; max-height: 600">
             <ul class="uk-slideshow-items">
                 <li>
-                    <img src="assets/images/dubai.png" alt="Photo of Dubai skyline" uk-cover>
+                    <img src="assets/images/dubai.png" alt="Photo of Dubai skyline" uk-cover style="max-width: 1200px;">
                 </li>
                 <li>
-                    <img src="assets/images/greece.png" alt="Photo of hillside in Greece" uk-cover>
+                    <img src="assets/images/greece.png" alt="Photo of hillside in Greece" uk-cover style ="max-width: 1200px;">
                 </li>
                 <li>
-                    <img src="assets/images/honolulu.jpg" alt="Photo of Honolulu island" uk-cover>
+                    <img src="assets/images/honolulu.jpg" alt="Photo of Honolulu island" uk-cover style="max-width: 1200px">
                 </li>
                 <li>
-                    <img src="assets/images/philly.png" alt="Photo of Philadelphia skyline" uk-cover>
+                    <img src="assets/images/philly.png" alt="Photo of Philadelphia skyline" uk-cover style="max-width: 1200px" >
                 </li>
                 <li>
-                    <img src="assets/images/venice.png" alt="Photo of Venice canals" uk-cover>
+                    <img src="assets/images/venice.png" alt="Photo of Venice canals" uk-cover style="max-width: 1200px">
                 </li>
                <!-- <li>
                     <img src="" alt="" uk-cover>
@@ -84,9 +75,11 @@
 
             </ul>
 
+
       </div>  <!--Form Inputs-->
         <div class="uk-position-center uk-padding" style="border: solid 2px black; background-color: white;">
         <form class="uk-grid-small" uk-grid>
+
             <!--Where? id: location -->
             <label for="destination">Choose a City</label>
             <div class="uk-width-1-1">
