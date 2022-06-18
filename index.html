@@ -48,70 +48,116 @@
             </div>
         </nav>
     </header> 
-
+ <main>
     <!--Hero Section-->
-    <div id= "hero" class ="uk-height-max-large">
-    <!--background image hero-->
-    <div uk-slideshow="animation: push; autoplay: true; min-height: 300; max-height: 600">
-            <ul class="uk-slideshow-items">
-                <li>
-                    <img src="assets/images/dubai.png" alt="Photo of Dubai skyline" uk-cover style="max-width: 1200px;">
-                </li>
-                <li>
-                    <img src="assets/images/greece.png" alt="Photo of hillside in Greece" uk-cover style ="max-width: 1200px;">
-                </li>
-                <li>
-                    <img src="assets/images/honolulu.jpg" alt="Photo of Honolulu island" uk-cover style="max-width: 1200px">
-                </li>
-                <li>
-                    <img src="assets/images/philly.png" alt="Photo of Philadelphia skyline" uk-cover style="max-width: 1200px" >
-                </li>
-                <li>
-                    <img src="assets/images/venice.png" alt="Photo of Venice canals" uk-cover style="max-width: 1200px">
-                </li>
-               <!-- <li>
-                    <img src="" alt="" uk-cover>
-                </li> --->
+    <div id= "hero" class ="uk-height-max-large uk-margin">
+        <!--background image hero-->
+        <div uk-slideshow="animation: fade; autoplay: true; min-height: 300; max-height: 700">
+                <ul class="uk-slideshow-items">
+                    <li>
+                        <img src="assets/images/dubai.png" alt="Photo of Dubai skyline" uk-cover style="max-width: 1200px;">
+                    </li>
+                    <li>
+                        <img src="assets/images/greece.png" alt="Photo of hillside in Greece" uk-cover style ="max-width: 1200px;">
+                    </li>
+                    <li>
+                        <img src="assets/images/honolulu.jpg" alt="Photo of Honolulu island" uk-cover style="max-width: 1200px">
+                    </li>
+                    <li>
+                        <img src="assets/images/philly.png" alt="Photo of Philadelphia skyline" uk-cover style="max-width: 1200px" >
+                    </li>
+                    <li>
+                        <img src="assets/images/venice.png" alt="Photo of Venice canals" uk-cover style="max-width: 1200px">
+                    </li>
+                <!-- <li>
+                        <img src="" alt="" uk-cover>
+                    </li> --->
 
-            </ul>
-
-
-      </div>  <!--Form Inputs-->
-        <div class="uk-position-center uk-padding" style="border: solid 2px black; background-color: white;">
-        <form class="uk-grid-small" uk-grid>
-
-            <!--Where? id: location -->
-            <label for="destination">Choose a City</label>
-            <div class="uk-width-1-1">
-            <input type="text" placeholder="City" name="Destination:" id="destination" class="uk-input">
-            </div>
-            <!--When (Start End dates)? id: trip-length-->
-            <div class="uk-width-1-2@s">
-            <input type="text" placeholder="Start Date" id="startDate" class="uk-input">
-            </div>
-            <div class="uk-width-1-2@s">
-            <input type="text" placeholder="End Date" id="endDate" class="uk-input">
-            </div>
-            
-
-                <!--use callender for date inputs-->
-            <!--How Many? id: party-size -->
-        </form>
-    </div>   
+                </ul>
+                <div class="uk-position-center uk-padding" style="border: solid 2px black; background-color: white;">
+                    <form class="uk-grid-small" uk-grid>
     
-    <!--Popular City Cards-->
-            <!--NYC-->
-            <!--Paris-->
-            <!--Tokyo-->
+                        <!--Where? id: location -->
+                        <label for="destination">Choose a City</label>
+                        <div class="uk-width-1-1">
+                        <input type="text" placeholder="City" name="Destination:" id="destination" class="uk-input">
+                        </div>
+                        <!--When (Start End dates)? id: trip-length-->
+                        <div class="uk-width-1-2@s">
+                        <input type="text" placeholder="Start Date" id="startDate" class="uk-input">
+                        </div>
+                        <div class="uk-width-1-2@s">
+                        <input type="text" placeholder="End Date" id="endDate" class="uk-input">
+                        </div>
+                        
+    
+                            <!--use callender for date inputs-->
+                        <!--How Many? id: party-size -->
+                    </form>
+                </div>   
 
-    <!--Footer-->
-    <div class="footer uk-position-bottom">
-        <h3>Brought to you by Tour Tinder ❤️️</h3>
-        <p>
-            &copy; 2022 Tour Tinder Inc.
-        </p>
+        </div>  <!--Form Inputs-->
+            
     </div>
+    <!--Popular City Cards-->
+            <!--Greece-->
+            <!--Philly-->
+            <!--Honolulu-->
+    <div>
+        <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+            <div class="uk-card-media-left uk-cover-container">
+                <img src="assets/images/greece.png" alt="" uk-cover>
+                <canvas width="600" height="400"></canvas>
+            </div>
+            <div>
+                <div class="uk-card-body">
+                    <h3 class="uk-card-title">Greece</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+            <div class="uk-flex-last@s uk-card-media-right uk-cover-container">
+                <img src="assets/images/philly.png" alt="" uk-cover>
+                <canvas width="600" height="400"></canvas>
+            </div>
+            <div>
+                <div class="uk-card-body">
+                    <h3 class="uk-card-title">Philadelphia</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+            <div class="uk-card-media-left uk-cover-container">
+                <img src="assets/images/honolulu.jpg" alt="" uk-cover>
+                <canvas width="600" height="400"></canvas>
+            </div>
+            <div>
+                <div class="uk-card-body">
+                    <h3 class="uk-card-title">Honolulu</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                </div>
+            </div>
+        </div>
+    </div>   
         <!--Filler stuff from nav-->
+</main>
+    <!--Footer-->
+
+<div>
+    <footer>
+        <div class="footer uk-position-bottom">
+            <h3>Brought to you by Tour Tinder ❤️️</h3>
+            <p>
+                &copy; 2022 Tour Tinder Inc.
+            </p>
+        </div>
+    </footer>
+</div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./assets/js/uikit.js"></script>
@@ -119,5 +165,6 @@
     <script src="./assets/js/script.js"></script>
    
 </body>
+
 </html>
 
