@@ -5,26 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tour Tinder</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./assets/css/uikit.css" />
     <link rel="stylesheet" href="./assets/css/style.css"/>
 
 </head>
 
-<body>
+<body style="background-color:#05052c;">
 
 
     
     <!--Header with -->
     <header>
         
-        <nav class="uk-navbar-container" uk-navbar>
-            <div class="uk-navbar-left">
-                <ul class="uk-navbar-nav">
+        <nav class="uk-navbar-container" uk-navbar style="background-color:#05052c;">
+            <div class="uk-navbar-left" style="background-color:#05052c;">
+                <ul class="uk-navbar-nav body">
                     <!--HomepageLink-->
-                    <li class="uk-active"><a href="#"><img class="logo" src="./assets/images/TourTinderLogo.svg" sizes="10px"></a></li>
-                    <li class="uk-parent"> 
+                    <li class="uk-active"><a href="./index.html"><img class="logo" src="./assets/images/TourTinderLogo.svg" sizes="10px"></a></li>
+                    <li class="uk-parent" > 
                         <!--Popular Cities-->
-                        <a href="#">Popular Cities</a>
+                        <a href="#" style="color:#AA00FF;">Popular Cities</a>
                         <div class="uk-navbar-dropdown">
                             <ul class="uk-nav uk-navbar-dropdown-nav">
                                 <!--NYC-->
@@ -37,71 +38,135 @@
                         </div>
                     </li>
                     <!--Past Trips-->
-                    <li class=""><a href="#">Recent Searches</a></li>
+                    <li class=""><a href="./searchpage.html" style="color:#AA00FF;">Recent Searches</a></li>
                     <!--About?-->
-                    <li class=""><a href="#">About Us</a></li>
+                    <li class=""><a href="./aboutme.html" style="color:#AA00FF;">About Us</a></li>
                     <!--Contact-->
-                    <li class=""><a href="#">Contact Us</a></li>
+                    <li class=""><a href="./contactus.html" style="color:#AA00FF;">Contact Us</a></li>
 
                 </ul>
             </div>
         </nav>
     </header> 
-
+ <main>
     <!--Hero Section-->
-    <div id= "hero" class ="uk-height-max-large">
-    <!--background image hero-->
-    <div uk-slideshow="animation: push; autoplay: true; min-height: 300; max-height: 600">
-            <ul class="uk-slideshow-items">
-                <li>
-                    <img src="assets/images/dubai.png" alt="Photo of Dubai skyline" uk-cover>
-                </li>
-                <li>
-                    <img src="assets/images/greece.png" alt="Photo of hillside in Greece" uk-cover>
-                </li>
-                <li>
-                    <img src="assets/images/honolulu.jpg" alt="Photo of Honolulu island" uk-cover>
-                </li>
-                <li>
-                    <img src="assets/images/philly.png" alt="Photo of Philadelphia skyline" uk-cover>
-                </li>
-                <li>
-                    <img src="assets/images/venice.png" alt="Photo of Venice canals" uk-cover>
-                </li>
-               <!-- <li>
-                    <img src="" alt="" uk-cover>
-                </li> --->
+    <div id= "hero" class ="uk-margin">
+        <!--background image hero-->
+        <div uk-slideshow="animation: fade; autoplay: true; min-height: 300; max-height: 700">
+                <ul class="uk-slideshow-items">
+                    <li>
+                        <img src="assets/images/dubai.png" alt="Photo of Dubai skyline" uk-cover style="max-width: 1200px;">
+                    </li>
+                    <li>
+                        <img src="assets/images/greece.png" alt="Photo of hillside in Greece" uk-cover style ="max-width: 1200px;">
+                    </li>
+                    <li>
+                        <img src="assets/images/honolulu.jpg" alt="Photo of Honolulu island" uk-cover style="max-width: 1200px">
+                    </li>
+                    <li>
+                        <img src="assets/images/philly.png" alt="Photo of Philadelphia skyline" uk-cover style="max-width: 1200px" >
+                    </li>
+                    <li>
+                        <img src="assets/images/venice.png" alt="Photo of Venice canals" uk-cover style="max-width: 1200px">
+                    </li>
+                <!-- <li>
+                        <img src="" alt="" uk-cover>
+                    </li> --->
 
-            </ul>
+                </ul>
+                <div class="uk-position-center uk-padding" style="border: solid 2px black; background-color:#CCCCFF ;">
+                    <form class="uk-grid-small" uk-grid>
+    
+                        <!--Where? id: location -->
+                        <label for="destination">Choose a City</label>
+                        <div class="uk-width-1-1">
+                        <input type="text" placeholder="City" name="Destination:" id="destination" class="uk-input">
+                        </div>
+                        <!--When (Start End dates)? id: trip-length-->
+                        <div class="uk-width-1-2@s">
+                        <input type="text" placeholder="Start Date" id="startDate" class="uk-input">
+                        </div>
+                        <div class="uk-width-1-2@s">
+                        <input type="text" placeholder="End Date" id="endDate" class="uk-input">
+                        </div>
+                        
+    
+                            <!--use callender for date inputs-->
+                        <!--How Many? id: party-size -->
+                    </form>
+                </div>   
+
+        </div>  <!--Form Inputs-->
+            
+    </div>
+
+    <div>
+        <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid style="color:  #AA00FF; background-color: #CCCCFF;">
+            <div class="uk-card-media-left uk-cover-container">
+                <img src="assets/images/greece.png" alt="" uk-cover>
+                <canvas width="600" height="400"></canvas>
             </div>
-        <!--Form Inputs-->
-        <form>
-            <!--Where? id: location -->
-            <label for ="destination">Choose a City</label>
-            <input type ="text" placeholder ="City" name = "Destination: " id = "destination" class =form-input>
-            <!--When (Start End dates)? id: trip-length-->
-                <!--use callender for date inputs-->
-            <!--How Many? id: party-size -->
-        </form>   
-    </div>
-    <!--Popular City Cards-->
-            <!--NYC-->
-            <!--Paris-->
-            <!--Tokyo-->
+            <div>
+                <div class="uk-card-body">
+                    <h3 class="uk-card-title" style="color:#AA00FF">Greece</h3>
+                    <p>Tourism in modern-day Greece started to flourish in the 1960s and 1970s, in what became known as mass tourism.During that time, large-scale construction projects for hotels and other such facilities were undertaken, and the country saw an increase in international tourists over the years.International events such as the 2004 Summer Olympic Games and the Eurovision Song Contest 2006, both held in Athens, greatly helped to boost tourism in the country, while large-scale nationally funded cultural infrastructure such as the New Acropolis Museum also contributed to the flow of tourists in the country. Thessaloniki was the European Youth capital in 2014.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid style="color:  #AA00FF; background-color: #CCCCFF;">
+            <div class="uk-flex-last@s uk-card-media-right uk-cover-container">
+                <img src="assets/images/philly.png" alt="" uk-cover>
+                <canvas width="600" height="400"></canvas>
+            </div>
+            <div>
+                <div class="uk-card-body">
+                    <h3 class="uk-card-title" style="color:#AA00FF" >Philadelphia</h3>
+                    <p>Philadelphia, Pennsylvania's largest city, is notable for its rich history, on display at the Liberty Bell, Independence Hall (where the Declaration of Independence and Constitution were signed) and other American Revolutionary sites. Also iconic are the steps of the Philadelphia Museum of Art, immortalized by Sylvester Stallone's triumphant run in the film "Rocky."</p>
+                </div>
+            </div>
+        </div>
 
-    <!--Footer-->
-    <div class="footer">
-        <h3>Brought to you by Tour Tinder ❤️️</h3>
-        <p>
-            &copy; 2022 Tour Tinder Inc.
-        </p>
-    </div>
+        <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid style="color:  #AA00FF; background-color: #CCCCFF;">
+            <div class="uk-card-media-left uk-cover-container">
+                <img src="assets/images/honolulu.jpg" alt="" uk-cover>
+                <canvas width="600" height="400"></canvas>
+            </div>
+            <div>
+                <div class="uk-card-body">
+                    <h3 class="uk-card-title" style="color:#AA00FF">Honolulu</h3>
+                    <p>Honolulu, on the island of Oahu's south shore, is capital of Hawaii and gateway to the U.S. island chain. The Waikiki neighborhood is its center for dining, nightlife and shopping, famed for its iconic crescent beach backed by palms and high-rise hotels, with volcanic Diamond Head crater looming in the distance. Sites relating to the World War II attack on Pearl Harbor include the USS Arizona Memorial.</p>
+                </div>
+            </div>
+        </div>
+    </div>   
+    <!--Popular City Cards-->
+            <!--Greece-->
+            <!--Philly-->
+            <!--Honolulu-->
+   
         <!--Filler stuff from nav-->
+</main>
+    <!--Footer-->
+
+<div>
+    <footer>
+        <div class="">
+            <h3 style="color:#AA00FF ;">Brought to you by Tour Tinder ❤️️</h3>
+            <p>
+                &copy; 2022 Tour Tinder Inc.
+            </p>
+        </div>
+    </footer>
+</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./assets/js/uikit.js"></script>
     <script src="./assets/js/uikit-icons.js"></script>
     <script src="./assets/js/script.js"></script>
    
 </body>
+
 </html>
 

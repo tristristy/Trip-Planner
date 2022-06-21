@@ -22,6 +22,11 @@ var dropDownOptions = ""
 var pastTrips = []
 
 
+
+var datepicker = $(function(){
+	$("#startDate").datepicker();
+	$("#endDate").datepicker();
+})
 var searchHandler = function(){
     var searchTerm = ""
 
@@ -43,3 +48,5 @@ var searchHandler = function(){
 //dynamically create elements for destination
 //add modals
 //call api based on user inputs
+
+datepicker();
