@@ -25,13 +25,14 @@ var pastTrips = []
 
 
 
-$( function() {
+var datePickerer = ( function() {
     var dateFormat = "mm/dd/yy",
       from = $( "#startDate" )
         .datepicker({
           defaultDate: "+1w",
           changeMonth: true,
-          numberOfMonths: 3
+          numberOfMonths: 3,
+		  dateFormat: "yy-mm-dd"
         })
         .on( "change", function() {
           to.datepicker( "option", "minDate", getDate( this ) );
@@ -39,7 +40,8 @@ $( function() {
       to = $( "#endDate" ).datepicker({
         defaultDate: "+1w",
         changeMonth: true,
-        numberOfMonths: 3
+        numberOfMonths: 3,
+		dateFormat: "yy-mm-dd"
       })
       .on( "change", function() {
         from.datepicker( "option", "maxDate", getDate( this ) );
@@ -53,16 +55,29 @@ $( function() {
 		}
    
 		return date;
-		console.log(date);
 	  }
 	} );
-var searchHandler = function(cityName, tripStart, tripEnd, partySize){
-    var searchTerm = ""
-	window.location.href = "searchpage.html"
-	console.log(tripStart);
-    
 
-	tripLength = tripEnd - tripStart
+var carCaller = function(cityName){
+	fetch("https://booking-com.p.rapidapi.com/v1/car-rental/locations?name=" + cityName + "locale=en-gb", bookingOptions)
+	.then(response => carResponse.json())
+	.then(response => console.log(response))
+	.catch(err => console.error(err));
+}
+
+var hotelCaller = function(cityName, tripStart, tripEnd, partySize) {
+	
+}
+
+var attractCaller = function(cityName, tripStart, tripEnd, partySize) {
+
+}
+
+
+var searchHandler = function(cityName, tripStart, tripEnd, partySize){
+    
+	
+	
 };
 // function isEmpty(val){
 //     return ((val !== '') && (val !== undefined) && (val.length > 0) && (val !== null));
@@ -72,7 +87,11 @@ $("#submit").on( "click", function(event){
 	event.preventDefault();
 	cityName = $("#destination").val();
 	partySize = $("#peopleCount").val();
-	if (!cityName ||  !partySize ) {
+	tripStart = $("#startDate").val();
+	tripEnd = $("#endDate").val();
+
+	
+	if (!cityName || !tripStart || !tripEnd || !partySize ) {
 		UIkit.notification({
 			message: "<span uk-icon='icon: warning'></span> Please complete the form before submitting",
 			status: 'danger',
@@ -92,11 +111,10 @@ $("#peopleCount").keypress(function(event){
 })
 
 
-
+datePickerer();
 //TODO:
 //Form interactions
 //dynamically create elements for destination
 //add modals
 //call api based on user inputs
 
-datepicker();
