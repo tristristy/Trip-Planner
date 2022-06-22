@@ -25,3 +25,11 @@ body {
     height: 75px;
 
 }
+
+.dropdown:hover{
+  color:#05052c;
+
+}
+.uk-navbar-dropdown-nav li a :hover{
+  color:#05052c
+}

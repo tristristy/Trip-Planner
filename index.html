@@ -26,14 +26,14 @@
                     <li class="uk-parent" > 
                         <!--Popular Cities-->
                         <a href="#" style="color:#AA00FF;">Popular Cities</a>
-                        <div class="uk-navbar-dropdown">
-                            <ul class="uk-nav uk-navbar-dropdown-nav">
-                                <!--NYC-->
-                                <li><a href="#"></a></li>
-                                <!--Paris-->
-                                <li><a href="#"></a></li>
-                                <!--Tokyo-->
-                                <li><a href="#"></a></li>
+                        <div class="uk-navbar-dropdown" Style=" background-color:#CCCCFF">
+                            <ul class="uk-nav uk-navbar-dropdown-nav " >
+                                <!--Greece-->
+                                <li><a onMouseOver= "this.style.color= '#05052c'" onMouseOut= "this.style.color= '#AA00FF'" href="#Greece" style="color:#AA00FF; ">Greece</a></li>
+                                <!--Philly-->
+                                <li><a onMouseOver= "this.style.color= '#05052c'" onMouseOut= "this.style.color= '#AA00FF'"href="#Philly" style="color:#AA00FF;">Philadelphia</a></li>
+                                <!--Honolulu-->
+                                <li><a onMouseOver= "this.style.color= '#05052c'" onMouseOut= "this.style.color= '#AA00FF'"href="#Honolulu" style="color:#AA00FF;">Honolulu</a></li>
                             </ul>
                         </div>
                     </li>
@@ -55,26 +55,26 @@
         <div uk-slideshow="animation: fade; autoplay: true; min-height: 300; max-height: 700">
                 <ul class="uk-slideshow-items">
                     <li>
-                        <img src="assets/images/dubai.png" alt="Photo of Dubai skyline" uk-cover style="max-width: 1200px;">
+                        <img src="assets/images/dubai.png" alt="Photo of Dubai skyline" uk-cover style="max-width: 1200px; max-height: 600px;">
                     </li>
                     <li>
-                        <img src="assets/images/greece.png" alt="Photo of hillside in Greece" uk-cover style ="max-width: 1200px;">
+                        <img src="assets/images/greece.png" alt="Photo of hillside in Greece" uk-cover style ="max-width: 1200px; max-height: 600px;">
                     </li>
                     <li>
-                        <img src="assets/images/honolulu.jpg" alt="Photo of Honolulu island" uk-cover style="max-width: 1200px">
+                        <img src="assets/images/honolulu.jpg" alt="Photo of Honolulu island" uk-cover style="max-width: 1200px; max-height: 600px;">
                     </li>
                     <li>
-                        <img src="assets/images/philly.png" alt="Photo of Philadelphia skyline" uk-cover style="max-width: 1200px" >
+                        <img src="assets/images/philly.png" alt="Photo of Philadelphia skyline" uk-cover style="max-width: 1200px; max-height: 600px;" >
                     </li>
                     <li>
-                        <img src="assets/images/venice.png" alt="Photo of Venice canals" uk-cover style="max-width: 1200px">
+                        <img src="assets/images/venice.png" alt="Photo of Venice canals" uk-cover style="max-width: 1200px; max-height: 600px;">
                     </li>
                 <!-- <li>
                         <img src="" alt="" uk-cover>
                     </li> --->
 
                 </ul>
-                <div class="uk-position-center uk-padding" style="border: solid 2px black; background-color:#CCCCFF ;">
+                <div class="uk-sticky-top uk-overlay " style="border: solid 2px black; background-color:#CCCCFF ;">
                     <form class="uk-grid-small" uk-grid>
     
                         <!--Where? id: location -->
@@ -107,7 +107,7 @@
                 <canvas width="600" height="400"></canvas>
             </div>
             <div>
-                <div class="uk-card-body">
+                <div class="uk-card-body" id ="Greece">
                     <h3 class="uk-card-title" style="color:#AA00FF">Greece</h3>
                     <p>Tourism in modern-day Greece started to flourish in the 1960s and 1970s, in what became known as mass tourism.During that time, large-scale construction projects for hotels and other such facilities were undertaken, and the country saw an increase in international tourists over the years.International events such as the 2004 Summer Olympic Games and the Eurovision Song Contest 2006, both held in Athens, greatly helped to boost tourism in the country, while large-scale nationally funded cultural infrastructure such as the New Acropolis Museum also contributed to the flow of tourists in the country. Thessaloniki was the European Youth capital in 2014.</p>
                 </div>
@@ -120,7 +120,7 @@
                 <canvas width="600" height="400"></canvas>
             </div>
             <div>
-                <div class="uk-card-body">
+                <div class="uk-card-body" id ="Philly">
                     <h3 class="uk-card-title" style="color:#AA00FF" >Philadelphia</h3>
                     <p>Philadelphia, Pennsylvania's largest city, is notable for its rich history, on display at the Liberty Bell, Independence Hall (where the Declaration of Independence and Constitution were signed) and other American Revolutionary sites. Also iconic are the steps of the Philadelphia Museum of Art, immortalized by Sylvester Stallone's triumphant run in the film "Rocky."</p>
                 </div>
@@ -128,7 +128,7 @@
         </div>
 
         <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid style="color:  #AA00FF; background-color: #CCCCFF;">
-            <div class="uk-card-media-left uk-cover-container">
+            <div class="uk-card-media-left uk-cover-container" id ="Honolulu">
                 <img src="assets/images/honolulu.jpg" alt="" uk-cover>
                 <canvas width="600" height="400"></canvas>
             </div>
