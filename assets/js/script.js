@@ -25,17 +25,42 @@ var pastTrips = []
 
 
 
-var datepicker = $(function(){
-	$("#startDate").datepicker();
-	$("#endDate").datepicker();
-})
-var searchHandler = function(){
+$( function() {
+    var dateFormat = "mm/dd/yy",
+      from = $( "#startDate" )
+        .datepicker({
+          defaultDate: "+1w",
+          changeMonth: true,
+          numberOfMonths: 3
+        })
+        .on( "change", function() {
+          to.datepicker( "option", "minDate", getDate( this ) );
+        }),
+      to = $( "#endDate" ).datepicker({
+        defaultDate: "+1w",
+        changeMonth: true,
+        numberOfMonths: 3
+      })
+      .on( "change", function() {
+        from.datepicker( "option", "maxDate", getDate( this ) );
+      });
+	  function getDate( element ) {
+		var date;
+		try {
+		  date = $.datepicker.parseDate( dateFormat, element.value );
+		} catch( error ) {
+		  date = null;
+		}
+   
+		return date;
+		console.log(date);
+	  }
+	} );
+var searchHandler = function(cityName, tripStart, tripEnd, partySize){
     var searchTerm = ""
-
-    cityName = $("#destination").val();
-	tripStart =$("#startDate").datepicker( "getDate" );
-	tripEnd = $( "#endDate" ).datepicker( "getDate" );
-	partySize = $("#peopleCount").val();
+	window.location.href = "searchpage.html"
+	console.log(tripStart);
+    
 
 	tripLength = tripEnd - tripStart
 };
@@ -46,10 +71,8 @@ var searchHandler = function(){
 $("#submit").on( "click", function(event){
 	event.preventDefault();
 	cityName = $("#destination").val();
-	tripStart =$("#startDate").datepicker( "getDate" );
-	tripEnd = $( "#endDate" ).datepicker( "getDate" );
 	partySize = $("#peopleCount").val();
-	if (!cityName || !tripStart || !tripEnd || !partySize ) {
+	if (!cityName ||  !partySize ) {
 		UIkit.notification({
 			message: "<span uk-icon='icon: warning'></span> Please complete the form before submitting",
 			status: 'danger',
@@ -58,7 +81,7 @@ $("#submit").on( "click", function(event){
 		});
 		
 	} else {
-		searchHandler();
+		searchHandler(cityName, tripStart, tripEnd, partySize);
 	}
 });
 
