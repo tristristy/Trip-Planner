@@ -58,15 +58,22 @@ var datePickerer = ( function() {
 	  }
 	} );
 
-var carCaller = function(cityName){
-	fetch("https://booking-com.p.rapidapi.com/v1/car-rental/locations?name=" + cityName + "locale=en-gb", bookingOptions)
-	.then(response => carResponse.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
-}
+// var carCaller = function(cityName){
+// 	fetch("https://booking-com.p.rapidapi.com/v1/car-rental/locations?name=" + cityName + "&locale=en-gb", bookingOptions)
+// 	.then(response => response.json())
+// 	.then(response => console.log(response))
+// 	.catch(err => console.error(err));
+// }
 
 var hotelCaller = function(cityName, tripStart, tripEnd, partySize) {
-	
+	console.log(cityName);
+	fetch('https://booking-com.p.rapidapi.com/v1/hotels/locations?locale=en-gb&name=' + cityName , bookingOptions)
+	.then(response => response.json())
+	.then(response => console.log(response))
+	.catch(err => console.error(err));
+
+	var destId = response[0].dest_id
+	console.log(destId);
 }
 
 var attractCaller = function(cityName, tripStart, tripEnd, partySize) {
@@ -75,7 +82,9 @@ var attractCaller = function(cityName, tripStart, tripEnd, partySize) {
 
 
 var searchHandler = function(cityName, tripStart, tripEnd, partySize){
-    
+    // carCaller(cityName);
+	hotelCaller(cityName, tripStart, tripEnd, partySize);
+
 	
 	
 };
