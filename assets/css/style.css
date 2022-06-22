@@ -25,15 +25,3 @@ body {
     height: 75px;
 
 }
-
-.primary-color {
-  color: var(--primary-color);
-}
-
-.secondary-color {
-  color: var(--secondary-color);
-}
-
-.tertiary-color {
-  color: var(--tertiary-color);
-}
