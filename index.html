@@ -1,30 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tour Tinder</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"
+        integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./assets/css/uikit.css" />
-    <link rel="stylesheet" href="./assets/css/style.css"/>
+    <link rel="stylesheet" href="./assets/css/style.css" />
 
 </head>
 
-<body style="background-color:#05052c;">
+<body style="background-color:#440e68;">
 
 
-    
+
     <!--Header with -->
     <header>
         
-        <nav class="uk-navbar-container" uk-navbar style="background-color:#05052c;">
+        <nav class="uk-navbar-container" uk-navbar style="background-color:#05052c; border-bottom: #CCCCFF 8px solid; ">
             <div class="uk-navbar-left" style="background-color:#05052c;">
                 <ul class="uk-navbar-nav body">
                     <!--HomepageLink-->
                     <li class="uk-active"><a href="./index.html"><img class="logo" src="./assets/images/TourTinderLogo.svg" sizes="10px"></a></li>
                     <li class="uk-parent" > 
                         <!--Popular Cities-->
+
                         <a href="#" style="color:#AA00FF;">Popular Cities</a>
                         <div class="uk-navbar-dropdown" Style=" background-color:#CCCCFF">
                             <ul class="uk-nav uk-navbar-dropdown-nav " >
@@ -34,15 +38,18 @@
                                 <li><a onMouseOver= "this.style.color= '#05052c'" onMouseOut= "this.style.color= '#AA00FF'"href="#Philly" style="color:#AA00FF;">Philadelphia</a></li>
                                 <!--Honolulu-->
                                 <li><a onMouseOver= "this.style.color= '#05052c'" onMouseOut= "this.style.color= '#AA00FF'"href="#Honolulu" style="color:#AA00FF;">Honolulu</a></li>
+
                             </ul>
                         </div>
                     </li>
                     <!--Past Trips-->
-                    <li class=""><a href="./searchpage.html" style="color:#AA00FF;">Recent Searches</a></li>
+                    <li class=""><a href="./searchpage.html" style="color: #AA00FF;">Recent Searches</a></li>
                     <!--About?-->
+
                     <li class=""><a href="./aboutus.html" style="color:#AA00FF;">About Us</a></li>
+
                     <!--Contact-->
-                    <li class=""><a href="./contactus.html" style="color:#AA00FF;">Contact Us</a></li>
+                    <li class=""><a href="./contactus.html" style="color: #AA00FF;">Contact Us</a></li>
 
                 </ul>
             </div>
@@ -89,7 +96,12 @@
                         <div class="uk-width-1-2@s">
                         <input type="text" placeholder="End Date" id="endDate" class="uk-input">
                         </div>
-                        
+                        <div class="uk-width-1-2@s">
+                            <input type="text" placeholder="Number of Travelers" id="peopleCount" class="uk-input">
+                        </div>
+                        <div class="uk-width-1-2@s ">
+                            <button id="submit" btn="submit" class="uk-button uk-width-1-1 uk-button-large uk-button-default">Submit</button>
+                        </div>
     
                             <!--use callender for date inputs-->
                         <!--How Many? id: party-size -->
@@ -101,40 +113,46 @@
     </div>
 
     <div>
-        <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid style="color:  #AA00FF; background-color: #CCCCFF;">
+        <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin secondary-color" uk-grid style="background-color: #CCCCFF; color: #AA00FF; border-style: double; width: 100%;">
             <div class="uk-card-media-left uk-cover-container">
                 <img src="assets/images/greece.png" alt="" uk-cover>
                 <canvas width="600" height="400"></canvas>
             </div>
             <div>
+
                 <div class="uk-card-body" id ="Greece">
                     <h3 class="uk-card-title" style="color:#AA00FF">Greece</h3>
+
                     <p>Tourism in modern-day Greece started to flourish in the 1960s and 1970s, in what became known as mass tourism.During that time, large-scale construction projects for hotels and other such facilities were undertaken, and the country saw an increase in international tourists over the years.International events such as the 2004 Summer Olympic Games and the Eurovision Song Contest 2006, both held in Athens, greatly helped to boost tourism in the country, while large-scale nationally funded cultural infrastructure such as the New Acropolis Museum also contributed to the flow of tourists in the country. Thessaloniki was the European Youth capital in 2014.</p>
                 </div>
             </div>
         </div>
         
-        <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid style="color:  #AA00FF; background-color: #CCCCFF;">
+        <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid style="color:  #AA00FF; background-color: #CCCCFF; border-style: double; width: 100%;">
             <div class="uk-flex-last@s uk-card-media-right uk-cover-container">
                 <img src="assets/images/philly.png" alt="" uk-cover>
                 <canvas width="600" height="400"></canvas>
             </div>
             <div>
+
                 <div class="uk-card-body" id ="Philly">
                     <h3 class="uk-card-title" style="color:#AA00FF" >Philadelphia</h3>
+
                     <p>Philadelphia, Pennsylvania's largest city, is notable for its rich history, on display at the Liberty Bell, Independence Hall (where the Declaration of Independence and Constitution were signed) and other American Revolutionary sites. Also iconic are the steps of the Philadelphia Museum of Art, immortalized by Sylvester Stallone's triumphant run in the film "Rocky."</p>
                 </div>
             </div>
         </div>
 
-        <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid style="color:  #AA00FF; background-color: #CCCCFF;">
+
+        <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid style="color:  #AA00FF; background-color: #CCCCFF; border-style: double; width: 100%;">
             <div class="uk-card-media-left uk-cover-container" id ="Honolulu">
+
                 <img src="assets/images/honolulu.jpg" alt="" uk-cover>
                 <canvas width="600" height="400"></canvas>
             </div>
             <div>
-                <div class="uk-card-body">
-                    <h3 class="uk-card-title" style="color:#AA00FF">Honolulu</h3>
+                <div class="uk-card-body" >
+                    <h3 class="uk-card-title secondary-color">Honolulu</h3>
                     <p>Honolulu, on the island of Oahu's south shore, is capital of Hawaii and gateway to the U.S. island chain. The Waikiki neighborhood is its center for dining, nightlife and shopping, famed for its iconic crescent beach backed by palms and high-rise hotels, with volcanic Diamond Head crater looming in the distance. Sites relating to the World War II attack on Pearl Harbor include the USS Arizona Memorial.</p>
                 </div>
             </div>
@@ -149,16 +167,16 @@
 </main>
     <!--Footer-->
 
-<div>
-    <footer>
-        <div class="">
-            <h3 style="color:#AA00FF ;">Brought to you by Tour Tinder ❤️️</h3>
-            <p>
-                &copy; 2022 Tour Tinder Inc.
-            </p>
-        </div>
-    </footer>
-</div>
+    <div>
+        <footer style="background-color:#05052c; border-top: #CCCCFF 8px solid;">
+            <div></div>
+                <h3 style="color: #AA00FF;">Brought to you by Tour Tinder ❤️️</h3>
+                <p style="color: #AA00FF;">
+                    &copy; 2022 Tour Tinder Inc.
+                </p>
+            </div>
+        </footer>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
