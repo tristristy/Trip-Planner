@@ -25,19 +25,59 @@ var pastTrips = []
 
 
 
-var datepicker = $(function(){
-	$("#startDate").datepicker();
-	$("#endDate").datepicker();
-})
-var searchHandler = function(){
-    var searchTerm = ""
+var datePickerer = ( function() {
+    var dateFormat = "mm/dd/yy",
+      from = $( "#startDate" )
+        .datepicker({
+          defaultDate: "+1w",
+          changeMonth: true,
+          numberOfMonths: 3,
+		  dateFormat: "yy-mm-dd"
+        })
+        .on( "change", function() {
+          to.datepicker( "option", "minDate", getDate( this ) );
+        }),
+      to = $( "#endDate" ).datepicker({
+        defaultDate: "+1w",
+        changeMonth: true,
+        numberOfMonths: 3,
+		dateFormat: "yy-mm-dd"
+      })
+      .on( "change", function() {
+        from.datepicker( "option", "maxDate", getDate( this ) );
+      });
+	  function getDate( element ) {
+		var date;
+		try {
+		  date = $.datepicker.parseDate( dateFormat, element.value );
+		} catch( error ) {
+		  date = null;
+		}
+   
+		return date;
+	  }
+	} );
 
-    cityName = $("#destination").val();
-	tripStart =$("#startDate").datepicker( "getDate" );
-	tripEnd = $( "#endDate" ).datepicker( "getDate" );
-	partySize = $("#peopleCount").val();
+var carCaller = function(cityName){
+	fetch("https://booking-com.p.rapidapi.com/v1/car-rental/locations?name=" + cityName + "locale=en-gb", bookingOptions)
+	.then(response => carResponse.json())
+	.then(response => console.log(response))
+	.catch(err => console.error(err));
+}
 
-	tripLength = tripEnd - tripStart
+var hotelCaller = function(cityName, tripStart, tripEnd, partySize) {
+	
+}
+
+var attractCaller = function(cityName, tripStart, tripEnd, partySize) {
+
+}
+
+
+var searchHandler = function(cityName, tripStart, tripEnd, partySize){
+    
+	
+	
 };
 // function isEmpty(val){
 //     return ((val !== '') && (val !== undefined) && (val.length > 0) && (val !== null));
@@ -46,9 +86,11 @@ var searchHandler = function(){
 $("#submit").on( "click", function(event){
 	event.preventDefault();
 	cityName = $("#destination").val();
-	tripStart =$("#startDate").datepicker( "getDate" );
-	tripEnd = $( "#endDate" ).datepicker( "getDate" );
 	partySize = $("#peopleCount").val();
+	tripStart = $("#startDate").val();
+	tripEnd = $("#endDate").val();
+
+	
 	if (!cityName || !tripStart || !tripEnd || !partySize ) {
 		UIkit.notification({
 			message: "<span uk-icon='icon: warning'></span> Please complete the form before submitting",
@@ -58,7 +100,7 @@ $("#submit").on( "click", function(event){
 		});
 		
 	} else {
-		searchHandler();
+		searchHandler(cityName, tripStart, tripEnd, partySize);
 	}
 });
 
@@ -69,11 +111,9 @@ $("#peopleCount").keypress(function(event){
 })
 
 
-
+datePickerer();
 //TODO:
 //Form interactions
 //dynamically create elements for destination
 //add modals
 //call api based on user inputs
-
-datepicker();
