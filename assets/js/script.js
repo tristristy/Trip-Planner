@@ -121,15 +121,17 @@ var hotelCardBuilder = function(hotels){
 		let grid = $("<div>").addClass("uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin");
 		
 		let imageContainer = $("<div>").addClass("uk-flex-last@s uk-card-media-right uk-cover-container");
-		let img = $("<img>").attr("src", "") //insert attr from array for image here
-		let canvas = $("<canvas>").attr({width:600, height:400})
-		let textContainer = $("<div>")
-		let textBody = $("<div>").addClass("uk-card-body")
-		let locationTitle = $("<h3>").addClass("uk-card-title").attr("style" ,"color: #aa00ff").text();
-		let paragraphContent = $("<p>").text("")
+		let img = $("<img>").attr("src", hotels.result[i].max_photo_url); //insert attr from array for image here
+		let canvas = $("<canvas>").attr({width:600, height:400});
+		let textContainer = $("<div>");
+		let textBody = $("<div>").addClass("uk-card-body");
+		let locationTitle = $("<h3>").addClass("uk-card-title").attr("style" ,"color: #aa00ff").text(hotels.result[i].hotel_name_trans);
+		let paragraphContent = $("<p>").text("");
 
 		textBody.append(locationTitle, paragraphContent);
 		textContainer.append(textBody);
+
+		imageContainer.append(img, canvas);
 
 		grid.append(imageContainer, textContainer)
 		$("#hotel-list").append(grid)
