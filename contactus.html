@@ -5,8 +5,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/uikit.css" />
+    <link rel="stylesheet" href="./assets/css/style.css"/>
+
 </head>
 <body>
     
+    <header>
+        
+        <nav class="uk-navbar-container" uk-navbar style="background-color:#05052c;">
+            <div class="uk-navbar-left" style="background-color:#05052c;">
+                <ul class="uk-navbar-nav body">
+                    <!--HomepageLink-->
+                    <li class="uk-active"><a href="./index.html"><img class="logo" src="./assets/images/TourTinderLogo.svg" sizes="10px"></a></li>
+                    <li class="uk-parent" > 
+                        <!--Popular Cities-->
+
+                        <a href="index.html#PopCities" style="color:#AA00FF;">Popular Cities</a>
+                        <div class="uk-navbar-dropdown" Style=" background-color:#CCCCFF">
+                            <ul class="uk-nav uk-navbar-dropdown-nav " >
+                                <!--Greece-->
+                                <li><a onMouseOver= "this.style.color= '#05052c'" onMouseOut= "this.style.color= '#AA00FF'" href="./index.html#Greece" style="color:#AA00FF; ">Greece</a></li>
+                                <!--Philly-->
+                                <li><a onMouseOver= "this.style.color= '#05052c'" onMouseOut= "this.style.color= '#AA00FF'"href="./index.html#Philly" style="color:#AA00FF;">Philadelphia</a></li>
+                                <!--Honolulu-->
+                                <li><a onMouseOver= "this.style.color= '#05052c'" onMouseOut= "this.style.color= '#AA00FF'"href="./index.html#Honolulu" style="color:#AA00FF;">Honolulu</a></li>
+
+                            </ul>
+                        </div>
+                    </li>
+                    <!--Past Trips-->
+                    <li class=""><a href="./searchpage.html" style="color: #AA00FF;">Recent Searches</a></li>
+                    <!--About?-->
+                    <li class=""><a href="./aboutus.html" style="color: #AA00FF;">About Us</a></li>
+                    <!--Contact-->
+                    <li class=""><a href="./contactus.html" style="color: #AA00FF;">Contact Us</a></li>
+
+                </ul>
+            </div>
+        </nav>
+    </header>    
+
+    <div class="footer uk-position-bottom">
+        <h3>Brought to you by Tour Tinder ❤️️</h3>
+        <p>
+            &copy; 2022 Tour Tinder Inc.
+        </p>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./assets/js/uikit.js"></script>
+    <script src="./assets/js/uikit-icons.js"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>

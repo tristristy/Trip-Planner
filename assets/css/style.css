@@ -1,0 +1,27 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #CCCCFF;
+  --secondary-color: #AA00FF;
+  --tertiary-color: #05052c; 
+}
+body {
+   color: var(--tertiary-color);
+   font-family: Helvetica, Arial, sans-serif; 
+  }
+
+.uk-slideshow{
+    padding: 10px;
+}
+
+
+.logo {
+    width: 100px;
+    height: 75px;
+
+}
