@@ -1,19 +1,3 @@
-const travelOptions = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': 'b480d29e23msh0abb34b9a11b6c1p1c16e4jsn4c7767506acd',
-		'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com'
-	}
-};
-
-const bookingOptions = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': 'b480d29e23msh0abb34b9a11b6c1p1c16e4jsn4c7767506acd',
-		'X-RapidAPI-Host': 'booking-com.p.rapidapi.com'
-	}
-};
-
 
 var cityName = ""
 var tripStart = ""
@@ -90,13 +74,24 @@ var searchHandler = async function(cityName, tripStart, tripEnd, partySize){
 }
 $("#submit").on( "click", function(event){
 	event.preventDefault();
-	cityName = $("#destination").val();
-	partySize = $("#peopleCount").val();
-	tripStart = $("#startDate").val();
-	tripEnd = $("#endDate").val();
+	let location = {
+		city:'',
+		party:'',
+		start:'',
+		end:''
+	}
+	
+	localStorage.removeItem("searchterm")
+	
+	location.city = $("#destination").val();
+	location.party = $("#peopleCount").val();
+	location.start = $("#startDate").val();
+	location.end = $("#endDate").val();
 
 	
-	if (!cityName || !tripStart || !tripEnd || !partySize ) {
+
+	
+	if (!location.city || !location.start || !location.end || !location.party ) {
 		UIkit.notification({
 			message: "<span uk-icon='icon: warning'></span> Please complete the form before submitting",
 			status: 'danger',
@@ -105,7 +100,9 @@ $("#submit").on( "click", function(event){
 		});
 		
 	} else {
-		searchHandler(cityName, tripStart, tripEnd, partySize);
+	localStorage.setItem("searchterm" ,JSON.stringify(location));
+	localStorage.setItem("recent-searches" , location)
+	window.location.href = "searchpage.html"
 	}
 });
 
@@ -135,7 +132,7 @@ var hotelCardBuilder = function(hotels){
 		textContainer.append(textBody);
 
 		grid.append(imageContainer, textContainer)
-		$("#hotelList").append(grid)
+		$("#hotel-list").append(grid)
 }
 }
 
@@ -158,7 +155,7 @@ var carCardBuilder = function(car){
 		textContainer.append(textBody);
 
 		grid.append(imageContainer, textContainer)
-		$("#carList").append(grid)
+		$("#car-list").append(grid)
 }
 }
 
