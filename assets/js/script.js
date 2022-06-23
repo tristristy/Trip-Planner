@@ -65,13 +65,13 @@ var datePickerer = ( function() {
 // 	.catch(err => console.error(err));
 // }
 var cityToId = function(cityName) {
-	var destId = ""
+	var destId 
 	console.log(cityName);
 	fetch('https://booking-com.p.rapidapi.com/v1/hotels/locations?locale=en-gb&name=' + cityName , bookingOptions)
-	.then(response => response.json())
-	.then(response => destId = response)
+	.then(response => {destId = response.json()})
+	.then(response => console.log(response))
 	.catch(err => console.error(err));
-	return destId
+	return destId[0].dest_id
 }
 
 var carCaller = function(cityName) {
@@ -81,8 +81,9 @@ var carCaller = function(cityName) {
 	.catch(err => console.error(err));
 }
 
-var hotelCaller = function(cityName, tripStart, tripEnd, partySize, destId) {
+var hotelCaller = function(cityName, tripStart, tripEnd, partySize) {
 	
+	const destId = cityToId(cityName)
 	fetch('https://booking-com.p.rapidapi.com/v1/hotels/search?checkout_date='+ tripEnd +'&units=metric&dest_id=' + destId + '&dest_type=city&locale=en-gb&adults_number='+ partySize +'&order_by=popularity&filter_by_currency=AED&checkin_date='+ tripStart + '&room_number=1&page_number=0&categories_filter_ids=class%3A%3A2%2Cclass%3A%3A4%2Cfree_cancellation%3A%3A1&include_adjacency=true', bookingOptions)
 	.then(response => response.json())
 	.then(response => console.log(response))
@@ -92,7 +93,10 @@ var hotelCaller = function(cityName, tripStart, tripEnd, partySize, destId) {
 
 var attractCaller = function(cityName, tripStart, tripEnd, partySize) {
 
-
+	fetch('https://travel-advisor.p.rapidapi.com/locations/v2/auto-complete?query=' + cityName + '&lang=en_US&units=km', travelOptions);
+	.then(response => response.json())
+	.then(response => console.log(response))
+	.catch(err => console.error(err));
 }
 
 
@@ -136,6 +140,10 @@ $("#peopleCount").keypress(function(event){
 	}
 })
 
+var searchCardBuilder = function(){
+	let grid = $("<div>").addClass("")
+	let container =
+}
 
 datePickerer();
 //TODO:
