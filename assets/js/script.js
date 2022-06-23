@@ -79,9 +79,14 @@ var datePickerer = ( function() {
 
 var searchHandler = async function(cityName, tripStart, tripEnd, partySize){
     const dest = await cityToId(cityName);
-    const place = dest[0].dest_id
-     des.hotels = await hotelCaller(cityName, tripStart, tripEnd, partySize, place);
-     des.rentals = await carCaller(cityName);
+    const place = dest[0].dest_id;
+    des.hotels = await hotelCaller(cityName, tripStart, tripEnd, partySize, place);
+    des.rentals = await carCaller(cityName);
+
+	window.location.href = "searchpage.html"
+
+	hotelCardBuilder(des.hotels);
+	carCardBuilder(des.rentals);
 }
 $("#submit").on( "click", function(event){
 	event.preventDefault();
@@ -104,14 +109,14 @@ $("#submit").on( "click", function(event){
 	}
 });
 
+
 $("#peopleCount").keypress(function(event){
 	if(event.keyCode == 13){
 		$("#submit").click();
 	}
 })
 
-var hotelCardBuilder = function(){
-
+var hotelCardBuilder = function(hotels){
 	for (var i = 0; i < 2; i++) {
 		let grid = $("<div>").addClass("uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin");
 		if (i = 1){
@@ -182,6 +187,7 @@ var carCardBuilder = function(){
 // }
 
 datePickerer();
+
 //TODO:
 //Form interactions
 //dynamically create elements for destination
