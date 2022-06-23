@@ -22,7 +22,10 @@ var tripLength = ""
 var partySize = ""
 var dropDownOptions = ""
 var pastTrips = []
-
+const des = {
+	rentals:'' ,
+	hotels:'' ,
+}
 
 
 var datePickerer = ( function() {
@@ -58,61 +61,28 @@ var datePickerer = ( function() {
 	  }
 	} );
 
-// var carCaller = function(cityName){
-// 	fetch("https://booking-com.p.rapidapi.com/v1/car-rental/locations?name=" + cityName + "&locale=en-gb", bookingOptions)
-// 	.then(response => response.json())
-// 	.then(response => console.log(response))
-// 	.catch(err => console.error(err));
-// }
-var cityToId = function(cityName) {
-	var destId 
-	console.log(cityName);
-	fetch('https://booking-com.p.rapidapi.com/v1/hotels/locations?locale=en-gb&name=' + cityName , bookingOptions)
-	.then(response => {destId = response.json()})
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
-	return destId[0].dest_id
+	var cityToId = async function(cityName) {
+		const response = await fetch('https://booking-com.p.rapidapi.com/v1/hotels/locations?locale=en-gb&name=' + cityName , bookingOptions);
+		return response.json();
+	}
+
+	var carCaller = async function(cityName) {
+		const response = await fetch('https://booking-com.p.rapidapi.com/v1/car-rental/locations?name=' + cityName + '&locale=en-gb', bookingOptions);
+	   
+	   return response.json();
+   }
+
+   var hotelCaller = async function(cityName, tripStart, tripEnd, partySize, place) {
+	const response = await fetch('https://booking-com.p.rapidapi.com/v1/hotels/search?checkout_date='+ tripEnd +'&units=metric&dest_id=' + place + '&dest_type=city&locale=en-gb&adults_number='+ partySize +'&order_by=popularity&filter_by_currency=AED&checkin_date='+ tripStart + '&room_number=1&page_number=0&categories_filter_ids=class%3A%3A2%2Cclass%3A%3A4%2Cfree_cancellation%3A%3A1&include_adjacency=true', bookingOptions)
+ 	return response.json();
 }
 
-var carCaller = function(cityName) {
-	fetch('https://booking-com.p.rapidapi.com/v1/car-rental/locations?name=' + cityName + '&locale=en-gb', bookingOptions)
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
+var searchHandler = async function(cityName, tripStart, tripEnd, partySize){
+    const dest = await cityToId(cityName);
+    const place = dest[0].dest_id
+     des.hotels = await hotelCaller(cityName, tripStart, tripEnd, partySize, place);
+     des.rentals = await carCaller(cityName);
 }
-
-var hotelCaller = function(cityName, tripStart, tripEnd, partySize) {
-	
-	const destId = cityToId(cityName)
-	fetch('https://booking-com.p.rapidapi.com/v1/hotels/search?checkout_date='+ tripEnd +'&units=metric&dest_id=' + destId + '&dest_type=city&locale=en-gb&adults_number='+ partySize +'&order_by=popularity&filter_by_currency=AED&checkin_date='+ tripStart + '&room_number=1&page_number=0&categories_filter_ids=class%3A%3A2%2Cclass%3A%3A4%2Cfree_cancellation%3A%3A1&include_adjacency=true', bookingOptions)
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
-	
-}
-
-var attractCaller = function(cityName, tripStart, tripEnd, partySize) {
-
-	fetch('https://travel-advisor.p.rapidapi.com/locations/v2/auto-complete?query=' + cityName + '&lang=en_US&units=km', travelOptions);
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
-}
-
-
-var searchHandler = function(cityName, tripStart, tripEnd, partySize){
-    // carCaller(cityName);
-	hotelCaller(cityName, tripStart, tripEnd, partySize);
-	carCaller(cityName);
-	attractCaller(cityName, tripStart, tripEnd, partySize);
-
-	
-	
-};
-// function isEmpty(val){
-//     return ((val !== '') && (val !== undefined) && (val.length > 0) && (val !== null));
-// !isEmpty($("#destination")) && !isEmpty($("#startDate")) && !isEmpty($( "#endDate" )) && !isEmpty($("#peopleCount").val) 
-// }
 $("#submit").on( "click", function(event){
 	event.preventDefault();
 	cityName = $("#destination").val();
@@ -187,29 +157,29 @@ var carCardBuilder = function(){
 }
 }
 
-var attractCardBuilder = function(){
-	for (var i = 0; i < 2; i++) {
-		let grid = $("<div>").addClass("uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin");
-		if (i = 1){
-			let imageContainer = $("<div>").addClass("uk-flex-last@s uk-card-media-right uk-cover-container");
-		} else {
-			let imageContainer = $("<div>").addClass("uk-card-media-left uk-cover-container");
-		}
+// var attractCardBuilder = function(){
+// 	for (var i = 0; i < 2; i++) {
+// 		let grid = $("<div>").addClass("uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin");
+// 		if (i = 1){
+// 			let imageContainer = $("<div>").addClass("uk-flex-last@s uk-card-media-right uk-cover-container");
+// 		} else {
+// 			let imageContainer = $("<div>").addClass("uk-card-media-left uk-cover-container");
+// 		}
 		
-		let img = $("<img>").attr("src", "") //insert attr from array for image here
-		let canvas = $("<canvas>").attr({width:600, height:400})
-		let textContainer = $("<div>")
-		let textBody = $("<div>").addClass("uk-card-body")
-		let locationTitle = $("<h3>").addClass("uk-card-title").attr("style" ,"color: #aa00ff").text();
-		let paragraphContent = $("<p>").text("")
+// 		let img = $("<img>").attr("src", "") //insert attr from array for image here
+// 		let canvas = $("<canvas>").attr({width:600, height:400})
+// 		let textContainer = $("<div>")
+// 		let textBody = $("<div>").addClass("uk-card-body")
+// 		let locationTitle = $("<h3>").addClass("uk-card-title").attr("style" ,"color: #aa00ff").text();
+// 		let paragraphContent = $("<p>").text("")
 
-		textBody.append(locationTitle, paragraphContent);
-		textContainer.append(textBody);
+// 		textBody.append(locationTitle, paragraphContent);
+// 		textContainer.append(textBody);
 
-		grid.append(imageContainer, textContainer)
-		$("#attractList").append(grid)
-}
-}
+// 		grid.append(imageContainer, textContainer)
+// 		$("#attractList").append(grid)
+// }
+// }
 
 datePickerer();
 //TODO:
