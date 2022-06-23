@@ -99,4 +99,5 @@ var carCardBuilder = function(car){
 }
 }
 
+let bana = 'fruit'
 searchHandler()
