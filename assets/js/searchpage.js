@@ -14,13 +14,17 @@ const bookingOptions = {
 	}
 };
 
+
 let searchTerm = JSON.parse(localStorage.getItem('searchterm'))
 console.log(searchTerm)
 const des = {
 	rentals:'' ,
 	hotels:'' ,
 }
-
+var cityName = searchTerm.city
+var tripStart = searchTerm.start
+var tripEnd = searchTerm.end
+var partySize = searchTerm.party
 
 var cityToId = async function(cityName) {
     const response = await fetch('https://booking-com.p.rapidapi.com/v1/hotels/locations?locale=en-gb&name=' + cityName , bookingOptions);
