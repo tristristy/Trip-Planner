@@ -140,9 +140,75 @@ $("#peopleCount").keypress(function(event){
 	}
 })
 
-var searchCardBuilder = function(){
-	let grid = $("<div>").addClass("")
-	let container =
+var hotelCardBuilder = function(){
+
+	for (var i = 0; i < 2; i++) {
+		let grid = $("<div>").addClass("uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin");
+		if (i = 1){
+			let imageContainer = $("<div>").addClass("uk-flex-last@s uk-card-media-right uk-cover-container");
+		} else {
+			let imageContainer = $("<div>").addClass("uk-card-media-left uk-cover-container");
+		}
+		let img = $("<img>").attr("src", "") //insert attr from array for image here
+		let canvas = $("<canvas>").attr({width:600, height:400})
+		let textContainer = $("<div>")
+		let textBody = $("<div>").addClass("uk-card-body")
+		let locationTitle = $("<h3>").addClass("uk-card-title").attr("style" ,"color: #aa00ff").text();
+		let paragraphContent = $("<p>").text("")
+
+		textBody.append(locationTitle, paragraphContent);
+		textContainer.append(textBody);
+
+		grid.append(imageContainer, textContainer)
+		$("#hotelList").append(grid)
+}
+}
+
+var carCardBuilder = function(){
+	for (var i = 0; i < 2; i++){
+		let grid = $("<div>").addClass("uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin");
+		if (i = 1){
+			let imageContainer = $("<div>").addClass("uk-flex-last@s uk-card-media-right uk-cover-container");
+		} else {
+			let imageContainer = $("<div>").addClass("uk-card-media-left uk-cover-container");
+		}
+		let img = $("<img>").attr("src", "") //insert attr from array for image here
+		let canvas = $("<canvas>").attr({width:600, height:400})
+		let textContainer = $("<div>")
+		let textBody = $("<div>").addClass("uk-card-body")
+		let locationTitle = $("<h3>").addClass("uk-card-title").attr("style" ,"color: #aa00ff").text();
+		let paragraphContent = $("<p>").text("")
+
+		textBody.append(locationTitle, paragraphContent);
+		textContainer.append(textBody);
+
+		grid.append(imageContainer, textContainer)
+		$("#carList").append(grid)
+}
+}
+
+var attractCardBuilder = function(){
+	for (var i = 0; i < 2; i++) {
+		let grid = $("<div>").addClass("uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin");
+		if (i = 1){
+			let imageContainer = $("<div>").addClass("uk-flex-last@s uk-card-media-right uk-cover-container");
+		} else {
+			let imageContainer = $("<div>").addClass("uk-card-media-left uk-cover-container");
+		}
+		
+		let img = $("<img>").attr("src", "") //insert attr from array for image here
+		let canvas = $("<canvas>").attr({width:600, height:400})
+		let textContainer = $("<div>")
+		let textBody = $("<div>").addClass("uk-card-body")
+		let locationTitle = $("<h3>").addClass("uk-card-title").attr("style" ,"color: #aa00ff").text();
+		let paragraphContent = $("<p>").text("")
+
+		textBody.append(locationTitle, paragraphContent);
+		textContainer.append(textBody);
+
+		grid.append(imageContainer, textContainer)
+		$("#attractList").append(grid)
+}
 }
 
 datePickerer();
