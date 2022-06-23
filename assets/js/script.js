@@ -139,7 +139,7 @@ var hotelCardBuilder = function(hotels){
 }
 }
 
-var carCardBuilder = function(){
+var carCardBuilder = function(car){
 	for (var i = 0; i < 2; i++){
 		let grid = $("<div>").addClass("uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin");
 		if (i = 1){
