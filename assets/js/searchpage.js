@@ -13,9 +13,9 @@ const bookingOptions = {
 		'X-RapidAPI-Host': 'booking-com.p.rapidapi.com'
 	}
 };
-const cat = localStorage.getItem('searchterm')
-const location = JSON.parse(localStorage.getItem('searchterm'))
-console.log(location)
+
+let searchTerm = JSON.parse(localStorage.getItem('searchterm'))
+console.log(searchTerm)
 const des = {
 	rentals:'' ,
 	hotels:'' ,
@@ -100,4 +100,4 @@ var carCardBuilder = function(car){
 }
 
 let bana = 'fruit'
-searchHandler()
+searchHandler();
