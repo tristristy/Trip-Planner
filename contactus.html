@@ -14,31 +14,33 @@
     
     <header>
         
-        <nav class="uk-navbar-container" uk-navbar>
-            <div class="uk-navbar-left">
-                <ul class="uk-navbar-nav">
+        <nav class="uk-navbar-container" uk-navbar style="background-color:#05052c;">
+            <div class="uk-navbar-left" style="background-color:#05052c;">
+                <ul class="uk-navbar-nav body">
                     <!--HomepageLink-->
-                    <li class=""><a href="./index.html"><img class="logo" src="./assets/images/TourTinderLogo.svg" sizes="10px"></a></li>
-                    <li class="uk-parent"> 
+                    <li class="uk-active"><a href="./index.html"><img class="logo" src="./assets/images/TourTinderLogo.svg" sizes="10px"></a></li>
+                    <li class="uk-parent" > 
                         <!--Popular Cities-->
-                        <a href="#">Popular Cities</a>
-                        <div class="uk-navbar-dropdown">
-                            <ul class="uk-nav uk-navbar-dropdown-nav">
-                                <!--NYC-->
-                                <li><a href="#"></a></li>
-                                <!--Paris-->
-                                <li><a href="#"></a></li>
-                                <!--Tokyo-->
-                                <li><a href="#"></a></li>
+
+                        <a href="index.html#PopCities" style="color:#AA00FF;">Popular Cities</a>
+                        <div class="uk-navbar-dropdown" Style=" background-color:#CCCCFF">
+                            <ul class="uk-nav uk-navbar-dropdown-nav " >
+                                <!--Greece-->
+                                <li><a onMouseOver= "this.style.color= '#05052c'" onMouseOut= "this.style.color= '#AA00FF'" href="./index.html#Greece" style="color:#AA00FF; ">Greece</a></li>
+                                <!--Philly-->
+                                <li><a onMouseOver= "this.style.color= '#05052c'" onMouseOut= "this.style.color= '#AA00FF'"href="./index.html#Philly" style="color:#AA00FF;">Philadelphia</a></li>
+                                <!--Honolulu-->
+                                <li><a onMouseOver= "this.style.color= '#05052c'" onMouseOut= "this.style.color= '#AA00FF'"href="./index.html#Honolulu" style="color:#AA00FF;">Honolulu</a></li>
+
                             </ul>
                         </div>
                     </li>
                     <!--Past Trips-->
-                    <li class=""><a href="./searchpage.html">Recent Searches</a></li>
+                    <li class=""><a href="./searchpage.html" style="color: #AA00FF;">Recent Searches</a></li>
                     <!--About?-->
-                    <li class=""><a href="./aboutme.html">About Us</a></li>
+                    <li class=""><a href="./aboutus.html" style="color: #AA00FF;">About Us</a></li>
                     <!--Contact-->
-                    <li class="uk-active"><a href="./contactus.html">Contact Us</a></li>
+                    <li class=""><a href="./contactus.html" style="color: #AA00FF;">Contact Us</a></li>
 
                 </ul>
             </div>
